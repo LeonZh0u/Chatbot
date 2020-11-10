@@ -1,0 +1,33 @@
+INFO - 00:57:58: loading Word2VecKeyedVectors object from /home/user10000370/notespace/Assignment3-1/model/retrieval/w2v.model
+INFO - 00:57:58: loading wv recursively from /home/user10000370/notespace/Assignment3-1/model/retrieval/w2v.model.wv.* with mmap=None
+INFO - 00:57:58: setting ignored attribute vectors_norm to None
+INFO - 00:57:58: loading vocabulary recursively from /home/user10000370/notespace/Assignment3-1/model/retrieval/w2v.model.vocabulary.* with mmap=None
+INFO - 00:57:58: loading trainables recursively from /home/user10000370/notespace/Assignment3-1/model/retrieval/w2v.model.trainables.* with mmap=None
+INFO - 00:57:58: setting ignored attribute cum_table to None
+INFO - 00:57:58: loaded /home/user10000370/notespace/Assignment3-1/model/retrieval/w2v.model
+hnsw_faiss.py:47: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return np.mean(np.array(arr),axis=0).reshape(1,-1)
+INFO - 00:58:22: Building hnsw index.
+hnsw_add_vertices: adding 259817 elements on top of 0 (preset_levels=0)
+  max_level = 3
+Adding 2 elements at level 3
+Adding 54 elements at level 2
+Adding 3959 elements at level 1
+Adding 255802 elements at level 0
+  10003 / 255802  20004 / 255802  30037 / 255802  40059 / 255802  50062 / 255802  60072 / 255802  70087 / 255802  80104 / 255802  90133 / 255802  100135 / 255802  110136 / 255802  120149 / 255802  130167 / 255802  140205 / 255802  150223 / 255802  160227 / 255802  170242 / 255802  180254 / 255802  190255 / 255802  200258 / 255802  210261 / 255802  220266 / 255802  230267 / 255802  240284 / 255802  250289 / 2558020    [[-0.14431071, 0.021058679, 0.12439052, -0.048...
+1    [[-0.04216094, -0.07199304, -0.4244972, 0.7225...
+2    [[-0.46910515, -0.054167747, 0.5124938, 0.2209...
+3    [[-0.12987170974041407, -0.11878839483930054, ...
+4    [[-0.04216094, -0.07199304, -0.4244972, 0.7225...
+Name: custom_vec, dtype: object
+Done in 1854248.367 ms
+Traceback (most recent call last):
+  File "hnsw_faiss.py", line 167, in <module>
+    print(hnsw.search(test, k=10))
+  File "hnsw_faiss.py", line 151, in search
+    D , I = self.index.search(test_vec,k)
+  File "/usr/local/lib/python3.6/dist-packages/faiss-1.6.3-py3.6.egg/faiss/__init__.py", line 166, in replacement_search
+    swig_ptr(labels))
+  File "/usr/local/lib/python3.6/dist-packages/faiss-1.6.3-py3.6.egg/faiss/swigfaiss.py", line 4436, in search
+    return _swigfaiss.IndexHNSW_search(self, n, x, k, distances, labels)
+TypeError: in method 'IndexHNSW_search', argument 3 of type 'float const *'
